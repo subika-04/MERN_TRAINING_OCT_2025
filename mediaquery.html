@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bigbox
+        {
+            width: 1500px;
+            height: 1000px;
+        }
+        .smallbox
+        {
+            background-color: rgb(176, 21, 207);
+            border: 3px solid black;
+            width: 100px;
+            height: 100px;
+        }
+        @media (min-width:500px)
+        {
+            .bigbox
+            {
+                background-color: rgb(221, 126, 173);
+                display: flex;
+                flex-direction: row;
+            }
+        }
+         @media (max-width:500px)
+        {
+            .bigbox
+            {
+                background-color: rgb(164, 210, 231);
+                 display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="bigbox">
+        <div class="smallbox">1</div>
+        <div class="smallbox">2</div>
+        <div class="smallbox">3</div>
+        <div class="smallbox">4</div>
+        <div class="smallbox">5</div>
+        <div class="smallbox">6</div>
+    </div>
+</body>
+</html>
