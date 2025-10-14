@@ -70,6 +70,14 @@ const promise=new Promise((resolve,reject)=>{
     },2000);
 });
 
+
+console.log("first");
+Promise.resolve().then(console.log("From promises"));
+setTimeout(()=>{
+    console.log("Inside Timeout");
+},2000)
+console.log("End");
+
     console.log("Before Promise Execution");
     promise.then((result)=>console.log(result))
            .catch(err=>console.log(err))
