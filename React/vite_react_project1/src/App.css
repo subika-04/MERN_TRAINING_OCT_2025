@@ -1,42 +1,346 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body
+{
+    margin: 0;
+    background-color: rgba(0, 0, 0, 0.938);
+    color: white;
+}
+.Mainbox
+{
+    display: flex;
+    margin-left: 240px;
+}
+.link
+{
+    display: flex;
+    height: 640px;
+    width: 160px;
+    font-size: 18px;
+    position:fixed;
+}
+.link a
+{
+ text-decoration: none;
+ color:white;
+}
+.link a:hover
+{
+  color:rgb(35, 176, 241);
+  font-size: 20px;
+}
+
+.glow-text {
+  font-size: 35px;
+  font-weight: bold;
+  animation: colorShift 4s infinite linear;
+}
+
+@keyframes colorShift {
+  0%   { color: #ff0080; }   /* Pink */
+  25%  { color: #f1072e; }   /* Cyan */
+  50%  { color: #0004ff; }   /* Green */
+  75%  { color: #9402b1; }   /* Orange */
+  100% { color: #ff0080; }   /* Back to Pink */
+}
+
+.details h1
+{
+    font-size: 35px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.details h2
+{
+    font-size: 30px;
+}
+.details
+{
+    padding-left: 50px;
+    padding-top:180px;
+    width: 600px;
+}
+.details p
+{
+    font-size: 18px;
+}
+.pic
+{
+    width: 300px;
+    height: 350px;
+    border-radius: 50%;
+    margin-top: 150px;
+    margin-left: 100px;
+}
+.pic img
+{
+    height: 337px;
+    width:286px;
+    border-radius: 50%;
+    padding: 7px;
+}
+@keyframes bgColorChange {
+ 0%   { background-color: #ff0080; }   /* Pink */
+  25%  { background-color: #0490b3; }   /* Cyan */
+  50%  { background-color: #0004ff; }   /* Green */
+  75%  { background-color: #9402b1; }   /* Orange */
+  100% { background-color: #ff0080; }   /* Back to Pink */
+}
+
+.pic {
+  animation: bgColorChange 4s infinite alternate;
+}
+
+.aboutbox
+{
+    display: flex;
+    margin-left: 260px;
+}
+.about
+{
+    margin-top:70px;
+    margin-left: 60px;
+    margin-right: 50px;
+}
+.about h2
+{
+    font-size: 20px;
+}
+.about h1
+{
+    font-size: 25px;
+}
+.areas {
+  border: 3px solid #ff00ff;
+  animation: borderShift 4s infinite linear;
+  padding: 20px;
+  width: 230px;
+  min-height: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ff00ff44;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.areas ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.areas ul li {
+  font-size: 16px;
+  background-color: transparent; /* remove the pink background */
+  margin-bottom: 8px;
+  color: white;
+}
+
+@keyframes borderShift {
+  0%   { border-color: #ff0080; }   /* Pink */
+  25%  { border-color: #f1072e; }   /* Cyan */
+  50%  { border-color: #0004ff; }   /* Green */
+  75%  { border-color: #9402b1; }   /* Orange */
+  100% { border-color: #ff0080; }   /* Back to Pink */
+}
+
+.areas ul li
+{
+    font-size: 15px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  flex-wrap: wrap;          /* allows wrapping on smaller screens */
+  margin-left: 250px;
+  gap: 60px;
+  margin-top: 0px;
+}
+
+.areas button
+{
+    padding: 8px;
+    background-color: #322ef3;
+    font-size: 18px;
+    border-radius: 20px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+.areas a
+{
+    text-decoration: none;
+    color: white;
+}
+.areas h2{
+    color: #1e63e4;
+}
+.skillPage
+{
+    color: rgb(255, 255, 255);
+    margin-left: 320px;
+    margin-top: 80px;
+}
+.skillset
+{
+    width: 130px;
+    height: 130px;
+    
+}
+.skill-content
+{
+    text-align: center;
+    font-size: 20px;
+}
+.skill img
+{
+    width: 100px;
+    height: 120px;
+    border: 4px solid black;
+    animation: borderShift 4s infinite linear;
+}
+.skills
+{
+    display: flex;
+    gap: 50px;
+    margin-left: 40px;
+}
+.form
+{
+    margin-left: 300px;
+}
+.projects
+{
+    margin-left: 300px;
+}
+.project-pic
+{
+    height:120px;
+    width: 300px;
+}
+.project-pic img
+{
+    height: 120px;
+    width: 300px;
+}
+.project
+{
+    border: 2px solid rgb(255, 255, 255);
+    width: 300px;
+}
+.all-project
+{
+    display: flex;
+    margin-left: 100px;
+    gap:100px;
+}
+.project p
+{
+    text-align: center;
+    font-size: 20px;
+    top: 0;
+}
+.contacts
+{
+    margin-left: 320px;
+    margin-top: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.contacts h2
+{
+    margin-left: 320px;
+    font-size: 25px;
+    margin-top: 30px;
+    color: deeppink;
+}
+.contacts h3
+{
+    margin-left: 380px;
+    font-size: 15px;
+}
+.contact{
+width: 150px;
+height: 150px;
+padding: 20px;
+}
+.contact h4
+{
   text-align: center;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.contact h5
+{
+    text-align: center;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.contact h5 a{
+    text-decoration: none;
+    color:white;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.contact-logo
+{
+    width: 30px;
+    height: 30px;
+    margin-left: 60px;
+    color:deeppink;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul
+{
+    margin-left: 300px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.contactlist
+{
+    display: flex;
+    margin-left: 30px;
+    margin-right: 140px;
+    margin-top: 10px;
+    gap:30px;
 }
-
-.card {
-  padding: 2em;
+.email input
+{
+    border-radius: 20px;
+    height: 40px;
+    width:300px;
+    background-color: white;
 }
-
-.read-the-docs {
-  color: #888;
+.email textarea
+{
+     border-radius: 20px;
+    height: 40px;
+    width:680px;
+    background-color: white;
+}
+#email
+{
+    margin-left: 60px;
+}
+.email
+{
+    margin-left: 100px;
+}
+.email h2
+{
+    margin-left: 240px;
+}
+.email button
+{
+    border-radius: 20px;
+    background-color: blue;
+    color: white;
+    padding: 5px;
+    font-size: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: 700px;
+}
+.navlist
+{
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    padding-left: 80px;
+    height: 640px;
+    width: 160px;
+    font-size: 18px;
+    position:fixed;
+    top:200px;
+    left:0;
+}
+#port
+{
+    margin-top: 10px;
+    margin-left: 65px;
 }
