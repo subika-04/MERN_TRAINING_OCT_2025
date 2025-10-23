@@ -96,7 +96,7 @@ body
 }
 .about
 {
-    margin-top:70px;
+    margin-top:30px;
     margin-left: 60px;
     margin-right: 50px;
 }
@@ -175,7 +175,7 @@ body
 {
     color: rgb(255, 255, 255);
     margin-left: 320px;
-    margin-top: 80px;
+    margin-top: 0px;
 }
 .skillset
 {
