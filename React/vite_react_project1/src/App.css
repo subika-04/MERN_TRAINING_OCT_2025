@@ -16,6 +16,7 @@ body
     width: 160px;
     font-size: 18px;
     position:fixed;
+    background-color: black;
 }
 .link a
 {
@@ -343,4 +344,6 @@ ul
 {
     margin-top: 10px;
     margin-left: 65px;
+    background-color: black;
+    padding-right: 42px;
 }
