@@ -67,3 +67,72 @@ exports.getTaskById=async (req,res)=>{
 
 }
 
+exports.updateTaskById=async (req,res)=>{
+  try{
+  const task=await Task.findByIdAndUpdate({
+    _id:req.params.id,
+    user:req.user.id
+  },
+  {
+    title:req.body.title,
+    description:req.body.description,
+    status:req.body.status
+  },{new:true}
+)
+if(!task)
+{
+  res.json({msg:"no task exist"})
+}
+ res.status(200).json({
+      msg: "Task updated successfully",
+      task
+    })
+  }
+  catch(error)
+  {
+    res.status(500).json(error)
+  }
+}
+
+exports.updatePatchTaskById=async (req,res)=>{
+  try{
+  const task=await Task.findByIdAndUpdate({
+    _id:req.params.id,
+    user:req.user.id
+  },
+  req.body,
+  {new:true}
+)
+if(!task)
+{
+  res.json({msg:"no task exist"})
+}
+ res.status(200).json({msg: "Task updated successfully",task})
+  }
+  catch(error)
+  {
+    res.status(500).json(error)
+  }
+}
+
+exports.deleteTaskById=async (req,res)=>{
+  try{
+  const task=await Task.findByIdAndDelete({
+    _id:req.params.id,
+    user:req.user.id
+  },{new:true}
+)
+if(!task)
+{
+  res.json({msg:"no task exist"})
+}
+ res.status(200).json({
+      msg: "Task deleted successfully",
+      task
+    })
+  }
+  catch(error)
+  {
+    res.status(500).json(error)
+  }
+}
