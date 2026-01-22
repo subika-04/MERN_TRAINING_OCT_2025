@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Hospital Management — Subika S</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grid-anim" aria-hidden="true"></div>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">SS</div><div><div class="name">Hospital Management</div><div class="role">HTML · JS · PHP</div></div></div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="projects.html">Back</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Hospital Management System for Emergency</h2>
+        <p class="section-sub">A web-based emergency management application focused on quick access to hospitals and ambulance requests.</p>
+
+        <div class="neon-line" aria-hidden></div>
+
+        <h3>Features</h3>
+        <ul style="color:var(--muted)">
+          <li>Select a department and view nearby hospitals on a map.</li>
+          <li>Book appointments and request ambulances directly from the homepage.</li>
+          <li>Request specialized ambulances in critical situations.</li>
+        </ul>
+
+        <h3 style="margin-top:12px">Tech stack</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <div class="tag">HTML/CSS</div><div class="tag">JavaScript</div><div class="tag">PHP</div><div class="tag">Maps</div>
+        </div>
+
+        <h3 style="margin-top:12px">Publication</h3>
+        <div class="card">
+          <strong>IJSREM — Hospital Management System for Emergency</strong>
+          <div class="section-sub">Volume 08, Issue 06 — June 2024</div>
+        </div>
+      </section>
+
+      <footer class="footer">Built with ❤️ — Subika S · <span id="year"></span></footer>
+    </main>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>

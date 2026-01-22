@@ -1,11 +1,94 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Subika S — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+  <div class="grid-anim" aria-hidden="true"></div>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">SS</div>
+        <div>
+          <div class="name">Subika S</div>
+          <div class="role">Software Engineer — MERN · Java · Face Recognition</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="about.html">About</a>
+        <a class="btn" href="projects.html">Projects</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero card intro">
+        <div>
+          <h1>Futuristic UIs & reliable systems.</h1>
+          <p>I build full-stack web apps with a focus on UX and ML-powered features — from polished frontends to robust backends and face recognition systems.</p>
+
+          <div class="neon-line" aria-hidden></div>
+
+          <div style="display:flex;gap:12px;margin-top:14px">
+            <div style="flex:1" class="card">
+              <div style="font-weight:800;font-size:18px">8.5 CGPA</div>
+              <div style="color:var(--muted);font-size:13px">Academic</div>
+            </div>
+            <div style="flex:1" class="card">
+              <div style="font-weight:800;font-size:18px">MERN · Java</div>
+              <div style="color:var(--muted);font-size:13px">Primary Stack</div>
+            </div>
+          </div>
+
+          <section style="margin-top:16px">
+            <h3>Areas</h3>
+            <div class="skills">
+              <div class="skill">Problem Solving</div>
+              <div class="skill">UI/UX with Figma</div>
+              <div class="skill">MERN Stack</div>
+            </div>
+          </section>
+        </div>
+
+        <aside style="display:flex;flex-direction:column;gap:12px;align-items:center;text-align:center;min-width:220px">
+          <div style="width:120px;height:120px;border-radius:18px;background:linear-gradient(135deg, rgba(0,240,255,0.08), rgba(125,92,255,0.08));display:grid;place-items:center;font-family:'Share Tech Mono',monospace;font-size:28px;color:var(--neon)">SS</div>
+          <div style="color:var(--muted);font-size:13px">subikass23it@srishakthi.ac.in</div>
+          <div style="color:var(--muted);font-size:13px">+91 88256 02149</div>
+          <a class="btn" href="contact.html">Contact / Resume</a>
+        </aside>
+      </section>
+
+      <section style="margin-top:20px" class="card">
+        <h3>Selected Projects</h3>
+        <div class="projects-grid">
+          <article class="proj card">
+            <h4>Face-Recognition based Hostel Entry System</h4>
+            <p>InsightFace backend (Python) + Java Swing frontend. Contactless secure entry using webcam & embeddings.</p>
+            <div style="margin-top:12px">
+              <a class="btn" href="face-project.html">View</a>
+              <a class="btn" href="projects.html">More</a>
+            </div>
+          </article>
+
+          <article class="proj card">
+            <h4>Hospital Management System for Emergency</h4>
+            <p>Emergency-first UX: map nearby hospitals, appointment & ambulance booking from the homepage.</p>
+            <div style="margin-top:12px">
+              <a class="btn" href="hospital-project.html">View</a>
+              <a class="btn" href="projects.html">More</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">Built with ❤️ — Subika S · <span id="year"></span></footer>
+    </main>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
 </body>
 </html>

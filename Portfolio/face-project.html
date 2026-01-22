@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Face Recognition Project — Subika S</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grid-anim" aria-hidden="true"></div>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">SS</div><div><div class="name">Face Recognition</div><div class="role">InsightFace · Java Swing · Python</div></div></div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="projects.html">Back</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Face-Recognition based Hostel Entry System</h2>
+        <p class="section-sub">Contactless secure access using InsightFace. The system integrates a Java Swing frontend (webcam capture) with a Python backend (InsightFace embeddings & comparison).</p>
+
+        <div class="neon-line" aria-hidden></div>
+
+        <h3>Technical Summary</h3>
+        <pre class="code">
+Overview:
+• Frontend: Java Swing to capture webcam frames and send cropped faces (base64) to backend.
+• Backend: Python + InsightFace to compute embeddings and compare against stored embeddings (MySQL).
+• Response: 'goodpic' returned for recognized users; captured face image returned for unknown faces; nothing returned if no face detected.
+
+Key highlights:
+• Efficient embedding comparison (cosine similarity / thresholding).
+• Designed for hostel entry with logging for unknown entries.
+• Fast recognition loop and UX-friendly feedback (sound / UI flashes).
+        </pre>
+
+        <h3>Tech stack</h3>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+          <div class="tag">Python</div><div class="tag">InsightFace</div><div class="tag">Java Swing</div><div class="tag">MySQL</div><div class="tag">Webcam</div>
+        </div>
+
+        <h3 style="margin-top:12px">Notes</h3>
+        <ul style="color:var(--muted)">
+          <li>Embeddings stored in DB for fast lookup.</li>
+          <li>Only send to server when a face is detected (saves bandwidth).</li>
+          <li>Recognized results display a 'goodpic' and trigger access flow.</li>
+        </ul>
+      </section>
+
+      <footer class="footer">Built with ❤️ — Subika S · <span id="year"></span></footer>
+    </main>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>

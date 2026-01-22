@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Subika S — Portfolio</title>
+  <meta name="description" content="Futuristic portfolio of Subika S — Software Engineer (MERN, Java, Face Recognition)" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg-1: #04040a;
+      --bg-2: #071029;
+      --neon: #00f0ff;
+      --accent: #7d5cff;
+      --muted: #9aa7b2;
+      --glass: rgba(255,255,255,0.03);
+      --card-grad: linear-gradient(135deg, rgba(125,92,255,0.12), rgba(0,240,255,0.06));
+      --radius: 14px;
+      --mono: 'Share Tech Mono', monospace;
+      --ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--ui);
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(125,92,255,0.06), transparent),
+                  radial-gradient(900px 500px at 90% 90%, rgba(0,240,255,0.04), transparent),
+                  linear-gradient(180deg,var(--bg-1),var(--bg-2));
+      color:#cde8ee;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      overflow-y:auto;
+    }
+
+    /* animated grid */
+    .grid-anim{
+      position:fixed; inset:0; pointer-events:none; z-index:0; opacity:0.18;
+      background-image:
+        linear-gradient(0deg, rgba(255,255,255,0.02) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+      background-size: 60px 60px, 60px 60px;
+      transform:translateZ(0);
+      animation: drift 40s linear infinite;
+    }
+    @keyframes drift{ from{background-position:0 0,0 0} to{background-position:200px 200px, -200px -200px}}
+
+    /* container */
+    .wrap{position:relative; max-width:1100px; margin:48px auto; padding:36px; z-index:2}
+
+    header{
+      display:flex; align-items:center; justify-content:space-between; gap:16px;
+      margin-bottom:22px;
+    }
+    .brand{
+      display:flex; gap:14px; align-items:center;
+    }
+    .logo{
+      width:56px; height:56px; border-radius:12px; background:linear-gradient(135deg,var(--accent),var(--neon));
+      box-shadow:0 6px 30px rgba(125,92,255,0.12), 0 1px 0 rgba(255,255,255,0.04) inset;
+      display:grid; place-items:center; font-weight:800; color:#021018; font-family:var(--mono);
+    }
+    .name-title{line-height:1}
+    .name{font-size:18px; font-weight:700}
+    .role{font-size:12px; color:var(--muted)}
+
+    nav{display:flex; gap:10px}
+    .btn{--pad:8px 12px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit;padding:var(--pad);border-radius:10px;cursor:pointer;font-size:13px}
+    .btn:hover{transform:translateY(-3px); box-shadow:0 8px 30px rgba(0,0,0,0.6)}
+
+    /* hero */
+    .hero{
+      display:grid; grid-template-columns: 1fr 360px; gap:28px; align-items:stretch; margin-top:18px;
+    }
+
+    .card{background:var(--glass); border-radius:var(--radius); padding:22px; box-shadow:0 8px 40px rgba(2,6,23,0.6); border:1px solid rgba(255,255,255,0.03); backdrop-filter: blur(6px);}
+
+    .intro{position:relative; overflow:hidden}
+    .intro h1{margin:0; font-size:28px; letter-spacing:-0.5px}
+    .intro p{color:var(--muted); margin-top:10px}
+
+    .stats{display:flex; gap:12px; margin-top:18px}
+    .stat{flex:1; background:var(--card-grad); padding:14px; border-radius:12px; text-align:center}
+    .stat .n{font-weight:800; font-size:18px}
+    .stat .t{font-size:12px; color:var(--muted)}
+
+    /* right panel */
+    .profile-card{display:flex; flex-direction:column; gap:14px; align-items:center; text-align:center}
+    .avatar{
+      width:140px; height:140px; border-radius:18px; background:linear-gradient(135deg, rgba(0,240,255,0.08), rgba(125,92,255,0.08)); display:grid;place-items:center;font-family:var(--mono); font-size:28px; color:var(--neon);
+      border:1px solid rgba(0,240,255,0.08);
+    }
+    .contact{font-size:13px; color:var(--muted)}
+    .socials{display:flex; gap:10px}
+    .chip{padding:8px 12px;border-radius:999px;background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03); font-size:13px}
+
+    /* sections */
+    section{margin-top:28px}
+    .section-head{display:flex; align-items:center; gap:12px}
+    .section-head h3{margin:0}
+    .section-sub{color:var(--muted); font-size:13px}
+
+    /* skills */
+    .skills{display:flex; gap:12px; flex-wrap:wrap; margin-top:12px}
+    .skill{padding:10px 14px; border-radius:12px; background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent); border:1px solid rgba(255,255,255,0.03); font-size:13px}
+
+    /* projects grid */
+    .projects{display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:16px; margin-top:14px}
+    .proj{padding:16px; border-radius:12px; position:relative; overflow:hidden}
+    .proj h4{margin:0 0 8px 0}
+    .proj p{color:var(--muted); font-size:14px}
+    .tags{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+    .tag{font-family:var(--mono); font-size:12px; padding:6px 8px; border-radius:8px; background:rgba(0,0,0,0.25); border:1px solid rgba(255,255,255,0.02)}
+    .proj .cta{margin-top:12px; display:flex; gap:8px}
+
+    /* publications */
+    .pubs{display:flex; flex-direction:column; gap:10px; margin-top:12px}
+    .pub{padding:12px; border-radius:10px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.03)}
+
+    footer{margin-top:36px; text-align:center; color:var(--muted); font-size:13px}
+
+    /* neon accent lines */
+    .neon-line{height:2px; background:linear-gradient(90deg, transparent, var(--neon), transparent); margin:12px 0}
+
+    /* responsiveness */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr}
+      .profile-card{flex-direction:row; align-items:center}
+      .profile-card .avatar{width:88px;height:88px}
+    }
+
+    /* subtle hover glows */
+    .proj:hover{box-shadow:0 20px 60px rgba(125,92,255,0.08); transform:translateY(-6px)}
+    .card:before{content:""; position:absolute; inset:auto 0 0 0; height:1px; background:linear-gradient(90deg, transparent, rgba(255,255,255,0.03), transparent)}
+
+    /* micro code block */
+    pre.code{background:rgba(0,0,0,0.18); padding:10px; border-radius:8px; font-family:var(--mono); font-size:12px; color:#b6fff7}
+
+  </style>
+</head>
+<body>
+  <div class="grid-anim" aria-hidden="true"></div>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">SS</div>
+        <div class="name-title">
+          <div class="name">Subika S</div>
+          <div class="role">Software Engineer — MERN · Java · Face Recognition</div>
+        </div>
+      </div>
+
+      <nav>
+        <button class="btn" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</button>
+        <button class="btn" onclick="document.getElementById('about').scrollIntoView({behavior:'smooth'})">About</button>
+        <button class="btn" onclick="copyEmail()">Email</button>
+        <a class="btn" href="#" id="downloadResume">Download CV</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="hero">
+        <div class="card intro">
+          <h1>Futuristic UIs, robust backends, and reliable recognition.</h1>
+          <p>I'm Subika — a B.Tech (IT) student turned software engineer who builds full-stack apps with a focus on UX and ML-powered features.</p>
+
+          <div class="neon-line" aria-hidden></div>
+
+          <div class="stats">
+            <div class="stat">
+              <div class="n">8.5 CGPA</div>
+              <div class="t">Academic Performance</div>
+            </div>
+            <div class="stat">
+              <div class="n">MERN · Java</div>
+              <div class="t">Primary Stack</div>
+            </div>
+            <div class="stat">
+              <div class="n">UI/UX · Figma</div>
+              <div class="t">Design Focus</div>
+            </div>
+          </div>
+
+          <section id="about">
+            <div class="section-head"><h3>About</h3></div>
+            <p class="section-sub">I design and develop web apps — from polished frontends to scalable backends. I also build ML-driven solutions such as Face Recognition-backed access systems.</p>
+
+            <div class="skills">
+              <div class="skill">HTML</div>
+              <div class="skill">CSS</div>
+              <div class="skill">JavaScript</div>
+              <div class="skill">React.js</div>
+              <div class="skill">Node.js</div>
+              <div class="skill">Express</div>
+              <div class="skill">MySQL</div>
+              <div class="skill">MongoDB</div>
+              <div class="skill">Java</div>
+              <div class="skill">Python</div>
+            </div>
+
+          </section>
+
+          <section id="projects">
+            <div class="section-head"><h3>Selected Projects</h3></div>
+            <p class="section-sub">Focused, production-minded projects demonstrating full-stack, systems, and ML abilities.</p>
+
+            <div class="projects">
+
+              <article class="proj card">
+                <h4>Face-Recognition based Hostel Entry System</h4>
+                <p>Tech: InsightFace (backend Python), Java Swing frontend — contactless and secure hostel access. Live-capture from webcam, embeddings compared on the backend, and recognized persons get immediate entry.</p>
+                <div class="tags">
+                  <span class="tag">Python</span>
+                  <span class="tag">Java Swing</span>
+                  <span class="tag">InsightFace</span>
+                  <span class="tag">Webcam</span>
+                </div>
+                <div class="cta">
+                  <button class="btn" onclick="openModal('face')">Details</button>
+                  <a class="btn" href="#">Repo</a>
+                </div>
+              </article>
+
+              <article class="proj card">
+                <h4>Hospital Management System for Emergency</h4>
+                <p>Tech: HTML, CSS, JavaScript, PHP. Emergency-first UX: pick department, view nearby hospitals, book appointments and request ambulances directly from the homepage.</p>
+                <div class="tags">
+                  <span class="tag">HTML/CSS</span>
+                  <span class="tag">JavaScript</span>
+                  <span class="tag">PHP</span>
+                  <span class="tag">Maps</span>
+                </div>
+                <div class="cta">
+                  <button class="btn" onclick="openModal('hospital')">Details</button>
+                  <a class="btn" href="#">Read Paper</a>
+                </div>
+              </article>
+
+            </div>
+          </section>
+
+          <section>
+            <div class="section-head"><h3>Publications</h3></div>
+            <div class="pubs">
+              <div class="pub card">
+                <strong>IJSREM — Hospital Management System for Emergency</strong>
+                <div class="section-sub">Volume 08, Issue 06 — June 2024</div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="card profile-card" aria-label="contact">
+          <div class="avatar">SS</div>
+          <div>
+            <div class="contact">subikass23it@srishakthi.ac.in</div>
+            <div class="contact">+91 88256 02149</div>
+            <div class="contact">+91 63855 02149</div>
+
+            <div style="height:12px"></div>
+            <div class="socials">
+              <a class="chip" href="#">GitHub</a>
+              <a class="chip" href="#">LinkedIn</a>
+            </div>
+
+            <div style="height:14px"></div>
+            <div class="section-sub">Areas</div>
+            <div class="chip">Problem Solving</div>
+            <div style="height:8px"></div>
+            <div class="chip">UI/UX with Figma</div>
+            <div style="height:8px"></div>
+            <div class="chip">MERN Stack</div>
+          </div>
+        </aside>
+      </div>
+
+      <footer>
+        Built with ❤️ — Subika S · <span id="year"></span>
+      </footer>
+    </main>
+  </div>
+
+  <!-- Modal for project details -->
+  <div id="modal" style="position:fixed; inset:0; display:none; place-items:center; z-index:40; background:rgba(0,0,0,0.6);">
+    <div style="width:clamp(320px,80%,720px); background:linear-gradient(180deg, rgba(7,16,41,0.98), rgba(3,6,17,0.96)); padding:20px; border-radius:14px; box-shadow:0 40px 120px rgba(0,0,0,0.7); border:1px solid rgba(255,255,255,0.03)">
+      <button onclick="closeModal()" style="float:right" class="btn">Close</button>
+      <h3 id="modal-title"></h3>
+      <pre id="modal-body" class="code" style="white-space:pre-wrap"></pre>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    function openModal(which){
+      const modal = document.getElementById('modal');
+      const title = document.getElementById('modal-title');
+      const body = document.getElementById('modal-body');
+      modal.style.display = 'grid';
+      if(which === 'face'){
+        title.textContent = 'Face-Recognition based Hostel Entry System';
+        body.textContent = `Overview:\n• Backend: InsightFace (Python) serving embeddings and comparisons.\n• Frontend: Java Swing captures webcam frames and sends cropped face to backend.\n• Workflow: detect -> crop -> send -> compare -> respond.\n\nHighlights:\n• Contactless authentication for hostel access.\n• Recognized users shown a 'goodpic' and granted entry.\n• Unknown faces are logged for review.`;
+      } else if(which === 'hospital'){
+        title.textContent = 'Hospital Management System for Emergency';
+        body.textContent = `Overview:\n• Stack: HTML/CSS/JS + PHP backend.\n• Features: select department, view nearby hospitals, book appointments, request ambulances.\n\nHighlights:\n• Ambulance booking from homepage for immediate assistance.\n• Publication available: IJSREM — June 2024.`;
+      }
+    }
+    function closeModal(){ document.getElementById('modal').style.display='none' }
+
+    function copyEmail(){
+      navigator.clipboard?.writeText('subikass23it@srishakthi.ac.in').then(()=>{
+        alert('Email copied to clipboard');
+      }).catch(()=>{alert('Could not copy — please select and copy manually')});
+    }
+
+    // Download resume: attempt to download a file called Resume.pdf in same folder
+    document.getElementById('downloadResume').addEventListener('click', function(e){
+      e.preventDefault();
+      const url = 'Resume.pdf';
+      fetch(url, {method:'HEAD'}).then(resp=>{
+        if(resp.ok){ window.location.href = url; }
+        else{ alert('Resume not found on server.'); }
+      }).catch(()=>{ alert('Resume not found or blocked.'); });
+    });
+
+  </script>
+</body>
+</html>

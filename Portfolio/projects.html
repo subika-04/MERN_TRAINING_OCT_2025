@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Projects — Subika S</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grid-anim" aria-hidden="true"></div>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">SS</div><div><div class="name">Subika S</div><div class="role">Projects</div></div></div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="about.html">About</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Projects</h2>
+        <p class="section-sub">A selection of work showing full-stack skills and ML integration.</p>
+
+        <div class="projects-grid">
+          <article class="proj card">
+            <h4>Face-Recognition based Hostel Entry System</h4>
+            <p>InsightFace backend (Python) + Java Swing frontend. Real-time recognition, webcam capture, and access control.</p>
+            <div style="margin-top:10px">
+              <a class="btn" href="face-project.html">Details</a>
+              <a class="btn" href="#">Repo</a>
+            </div>
+          </article>
+
+          <article class="proj card">
+            <h4>Hospital Management System for Emergency</h4>
+            <p>Emergency workflow: map hospitals, appointment booking, specialized ambulance requests directly from homepage.</p>
+            <div style="margin-top:10px">
+              <a class="btn" href="hospital-project.html">Details</a>
+              <a class="btn" href="#">Paper</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <footer class="footer">Built with ❤️ — Subika S · <span id="year"></span></footer>
+    </main>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>

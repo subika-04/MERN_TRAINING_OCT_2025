@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Contact — Subika S</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grid-anim" aria-hidden="true"></div>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">SS</div><div><div class="name">Contact</div><div class="role">Get in touch</div></div></div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="about.html">About</a>
+        <a class="btn" href="projects.html">Projects</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Contact</h2>
+        <p class="section-sub">Happy to collaborate — feel free to reach out.</p>
+
+        <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:12px">
+          <div style="flex:1;min-width:260px" class="card">
+            <strong>Email</strong>
+            <div class="section-sub">subikass23it@srishakthi.ac.in</div>
+            <div style="height:8px"></div>
+            <strong>Phone</strong>
+            <div class="section-sub">+91 88256 02149 / +91 63855 02149</div>
+            <div style="height:8px"></div>
+            <a class="btn" id="copyEmail" href="#">Copy Email</a>
+            <a class="btn" id="downloadResume" href="Resume.pdf">Download Resume</a>
+          </div>
+
+          <div style="flex:1;min-width:260px" class="card">
+            <h3>Publications</h3>
+            <div class="pubs">
+              <div>
+                <strong>IJSREM</strong>
+                <div class="section-sub">Paper: Hospital Management System for Emergency — Volume 08, Issue 06 | June 2024</div>
+              </div>
+            </div>
+
+            <div style="height:8px"></div>
+            <h3>Find me</h3>
+            <div style="display:flex;gap:8px">
+              <a class="btn" href="#">GitHub</a>
+              <a class="btn" href="#">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">Built with ❤️ — Subika S · <span id="year"></span></footer>
+    </main>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('copyEmail').addEventListener('click', function(e){
+      e.preventDefault();
+      navigator.clipboard?.writeText('subikass23it@srishakthi.ac.in').then(()=>alert('Email copied to clipboard')).catch(()=>alert('Copy failed'));
+    });
+  </script>
+</body>
+</html>

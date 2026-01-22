@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About — Subika S</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="grid-anim" aria-hidden="true"></div>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">SS</div><div><div class="name">Subika S</div><div class="role">Software Engineer</div></div></div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Home</a>
+        <a class="btn" href="projects.html">Projects</a>
+        <a class="btn" href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>About</h2>
+        <p class="section-sub">I design and build web applications with a focus on user experience and reliability. I also implement ML-driven features such as face recognition for practical access-control solutions.</p>
+
+        <div class="neon-line" aria-hidden></div>
+
+        <h3>Education</h3>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div class="card" style="flex:1">
+            <strong>Sri Shakthi Institute of Engineering and Technology</strong>
+            <div class="section-sub">Bachelor of Technology — Information Technology</div>
+            <div style="margin-top:8px;font-weight:700">CGPA: 8.5</div>
+          </div>
+
+          <div class="card" style="flex:1">
+            <strong>Areas of Interest</strong>
+            <div class="section-sub">Problem Solving · UI/UX with Figma · MERN Stack</div>
+          </div>
+        </div>
+
+        <h3 style="margin-top:12px">Skills</h3>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <div class="card" style="min-width:200px">
+            <strong>Languages</strong>
+            <div class="section-sub">C, Java, Python</div>
+          </div>
+          <div class="card" style="min-width:200px">
+            <strong>Frontend</strong>
+            <div class="section-sub">HTML, CSS, JavaScript, React.js</div>
+          </div>
+          <div class="card" style="min-width:200px">
+            <strong>Backend & DB</strong>
+            <div class="section-sub">Node.js, Express, MySQL, MongoDB</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="footer">Built with ❤️ — Subika S · <span id="year"></span></footer>
+    </main>
+  </div>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear()</script>
+</body>
+</html>
