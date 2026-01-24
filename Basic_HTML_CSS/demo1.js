@@ -33,4 +33,18 @@ rep();
 rep();
 
 print();
+console.log("nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn");
 
+const fetchDetails=async()=>{
+    try
+    {
+      const res=await fetch("https://jsonplaceholder.typicode.com/users");
+      const data=await res.json();
+      data.map((n)=>{console.log(n.address.zipcode)});
+    }
+    catch(error)
+    {
+        console.log(error);
+    }
+}
+fetchDetails();

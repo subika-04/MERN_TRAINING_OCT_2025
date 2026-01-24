@@ -7,11 +7,11 @@ exports.register=async(req,res)=>{
     const existingUser =await User.findOne({email});
     if(existingUser)
     {
-        res.status(400).send({message:"Email already exists"});
+        return res.status(400).send({message:"Email already exists"});
     }
     //if 10 given,2^10 times hashing algorithm runs(10-stable)
     const hashedPassword=await bcrypt.hash(password,10)
-    const user=await User.create({
+    const user=await User.create({ 
         name,email,password:hashedPassword
     })
     //Status created=201
@@ -24,12 +24,12 @@ exports.login=async(req,res)=>{
       const existingUser=await User.findOne({email});
       if(!existingUser)
       {
-        res.status(400).send("Email Not Registered")
+        return res.status(400).send("Email Not Registered")
       }
       const isMatching=await bcrypt.compare(password,existingUser.password)
       if(!isMatching)
       {
-        res.status(400).send("Incorrect Password")
+        return res.status(400).send("Incorrect Password")
       }
       const token=jwt.sign(
         {
