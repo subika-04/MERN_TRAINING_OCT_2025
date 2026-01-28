@@ -1,6 +1,9 @@
 import React from 'react'
+import { userContext } from '../App'
+import { useContext } from 'react'
 
-const Profile = ({ name, age, skills }) => {
+const Profile = ({ age, skills }) => {
+  const name=useContext(userContext)
   return (
     <div>
       <h1>I am {name} and {age} years old</h1>

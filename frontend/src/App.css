@@ -21,21 +21,17 @@
 {
     background-color: rgb(18, 233, 244);
     padding: 10px;
-    height: 250px;
-    width: 250px;
+    width: 340px;
 }
 .product h4
-{
-    font-size: 25px;
-}
-.product h5
 {
     font-size: 20px;
 }
 .products
 {
-    display: flex;
-    justify-content: space-around;
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
 }
 .product button
 {
@@ -45,6 +41,33 @@
  
 }
 .product button a{
+text-decoration: none;
+ color:white;
+}
+.user
+{
+    background-color: rgb(173, 244, 101);
+    padding: 10px;
+    width: 340px;
+}
+.user h4
+{
+    font-size: 20px;
+}
+.users
+{
+    display:flex;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.user button
+{
+  padding: 8px;
+  border-radius: 10px;
+  background-color: blue;
+ 
+}
+.user button a{
 text-decoration: none;
  color:white;
 }

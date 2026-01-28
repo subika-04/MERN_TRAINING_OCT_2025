@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 
 const Form = () => {
@@ -18,6 +18,9 @@ const Form = () => {
         [name]:value
      }))
     }
+    useEffect(()=>{
+      console.log("from form");
+    },[form])
     const handleSubmit=(e)=>{
       e.preventDefault()
       console.log(form)
